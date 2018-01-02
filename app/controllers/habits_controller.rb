@@ -1,21 +1,27 @@
 class HabitsController < ApplicationController
+
     def show
       @habit = Habit.find(params[:id])
     end
 
     def new
       @habit = Habit.new
-      if @habit.save
-        @goal = Goal.new(user_id: @habit.user_id, habit_id: @goal.habit_id)
+    end
 
-        redirect_to user_path(@habit.user)
+    def create
+      @habit = Habit.new(habit_params)
+      if @habit.save
+        @goal = Goal.create(user_id: current_user.id, habit_id: @habit.id)
+        redirect_to user_path(current_user)
       else
         render :new
       end
     end
 
-    def create
-      @habit = Habit.new
+    private
+
+    def habit_params
+      params.require(:habit).permit(:name)
     end
 
 end
