@@ -18,6 +18,8 @@ class Event < ApplicationRecord
   end
 
   # return the date in the correct format
-
+  def date_formatter
+    self.date.strftime("%a %B %d, %Y")
+  end
 
 end

@@ -18,12 +18,12 @@
   <ul>
     <% @goal.events.each do |event| %>
       <p>__________________________</p>
-      <li>Date:<%= event.date %></li>
-      <li>Start Time:<%= event.start_time.strftime("%R") %></li>
+      <li>Date: <%= event.date_formatter %></li>
+      <li>Start Time: <%= event.start_time.strftime("%R") %></li>
       <% if event.end_time == nil %>
         <li><%= link_to "End", edit_event_path(event) %></li>
       <% else %>
-        <li>End Time:<%= event.end_time.strftime("%R") %></li>
+        <li>End Time: <%= event.end_time.strftime("%R") %></li>
         <li>Elapsed Time: <%= event.elapsed_time %></li>
       <% end %>
     <% end %>
