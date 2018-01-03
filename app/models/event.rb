@@ -3,13 +3,14 @@ class Event < ApplicationRecord
 
   # calculates how much time elapsed based on start/end time
   def minutes
-    minutes = 0
+    min = 0
+
     seconds = self.end_time - self.start_time
     while seconds > 60
-      minutes += 1
+      min += 1
       seconds -= 60
     end
-    minutes
+    min
   end
 
   def elapsed_time
@@ -17,6 +18,6 @@ class Event < ApplicationRecord
   end
 
   # return the date in the correct format
-  
+
 
 end

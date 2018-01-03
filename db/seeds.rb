@@ -5,27 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
+#names
+20.times do
+  User.create(name: Faker::Name.first_name, password: "password")
+end
 
-john = User.create(name: "john")
-andrew = User.create(name: "andrew")
-will = User.create(name: "will")
-sharon = User.create(name: "sharon")
+20.times do
+  Habit.create(name: Faker::RickAndMorty.location)
+end
 
-#habits
-jogging = Habit.create(name: "jogging")
-guitar = Habit.create(name: "guitar")
-coding = Habit.create(name: "coding")
-yoga = Habit.create(name: "yoga")
+20.times do
+  Goal.create(user_id: Faker::Number.between(1, 20), habit_id: Faker::Number.between(1, 20), target_hours: Faker::Number.between(1, 15), target_times: Faker::Number.between(1, 5), target_streak: Faker::Number.between(1, 3))
+end
 
-#goals
-johnJogging = Goal.create(user_id: 1, habit_id: 1)
-andrewYoga = Goal.create(user_id: 2, habit_id: 4)
-willGuitar = Goal.create(user_id: 3, habit_id: 2)
-sharonCoding = Goal.create(user_id: 4, habit_id: 3)
+20.times do
+  Event.create(goal_id: Faker::Number.between(1, 20), start_time: Faker::Time.between(5.days.ago, 5.days.ago, :morning), end_time: Faker::Time.between(5.days.ago, 5.days.ago, :afternoon), date: Faker::Date.between(5.days.ago, 5.days.ago))
+end
 
-#events
-event01 = Event.create(goal_id: 1)
-event02 = Event.create(goal_id: 2)
-event03 = Event.create(goal_id: 3)
-event04 = Event.create(goal_id: 4)
+20.times do
+  Event.create(goal_id: Faker::Number.between(1, 20), start_time: Faker::Time.between(4.days.ago, 4.days.ago, :morning), end_time: Faker::Time.between(4.days.ago, 4.days.ago, :afternoon), date: Faker::Date.between(4.days.ago, 4.days.ago))
+end
+
+20.times do
+  Event.create(goal_id: Faker::Number.between(1, 20), start_time: Faker::Time.between(3.days.ago, 3.days.ago, :morning), end_time: Faker::Time.between(3.days.ago, 3.days.ago, :afternoon), date: Faker::Date.between(3.days.ago, 3.days.ago))
+end
+
+20.times do
+  Event.create(goal_id: Faker::Number.between(1, 20), start_time: Faker::Time.between(2.days.ago, 2.days.ago, :morning), end_time: Faker::Time.between(2.days.ago, 2.days.ago, :afternoon), date: Faker::Date.between(2.days.ago, 2.days.ago))
+end
+
+20.times do
+  Event.create(goal_id: Faker::Number.between(1, 20), start_time: Faker::Time.between(1.days.ago, 1.days.ago, :morning), end_time: Faker::Time.between(1.days.ago, 1.days.ago, :afternoon), date: Faker::Date.between(1.days.ago, 1.days.ago))
+end
