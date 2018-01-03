@@ -1,0 +1,18 @@
+<div class="">
+  <h1><%= @goal.habit.name %></h1>
+  <h2><%= @goal.user.name %></h2>
+  <ul>
+    <li>Total Hours:</li>
+    <li>Total Sessions:</li>
+    <li>Longest Streak:</li>
+  </ul>
+
+  <%= form_for @event do |f| %>
+    <%= f.number_field :goal_id, value: @goal.id, type: :hidden %>
+    <%= f.time_field :start_time, value: Time.now, type: :hidden %>
+    <%= f.date_field :date, value: Date.today, type: :hidden %>
+    <%= f.submit "Start #{@goal.habit.name}" %>
+  <% end %>
+  <!-- <%= button_to "Start #{@goal.habit.name}", events_path %> -->
+
+</div>

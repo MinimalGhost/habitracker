@@ -1,0 +1,20 @@
+<div class="">
+  <h1>Create new goal</h1>
+  <%= form_for @goal do |f| %>
+    <%= f.label :habit %>
+    <%= f.collection_select(:habit_id, @habits, :id, :name) %>
+    <br>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.label :target_hours %>
+    <%= f.number_field :target_hours %>
+    <br>
+    <%= f.label :target_streak %>
+    <%= f.number_field :target_streak %>
+    <br>
+    <%= f.label :target_times %>
+    <%= f.number_field :target_times %>
+    <br>
+    <%= f.submit %>
+  <% end %>
+
+</div>
