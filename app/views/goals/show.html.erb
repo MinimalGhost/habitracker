@@ -2,8 +2,8 @@
   <h1><%= @goal.habit.name %></h1>
   <h2><%= @goal.user.name %></h2>
   <ul>
-    <li>Total Hours:</li>
-    <li>Total Sessions:</li>
+    <li>Total Time: <%= @goal.total_time %></li>
+    <li>Total Sessions: <%= @goal.total_events %></li>
     <li>Longest Streak:</li>
   </ul>
 
@@ -15,4 +15,17 @@
   <% end %>
   <!-- <%= button_to "Start #{@goal.habit.name}", events_path %> -->
 
+  <ul>
+    <% @goal.events.each do |event| %>
+      <p>__________________________</p>
+      <li>Date:<%= event.date %></li>
+      <li>Start Time:<%= event.start_time.strftime("%R") %></li>
+      <% if event.end_time == nil %>
+        <li><%= link_to "End", edit_event_path(event) %></li>
+      <% else %>
+        <li>End Time:<%= event.end_time.strftime("%R") %></li>
+        <li>Elapsed Time: <%= event.elapsed_time %></li>
+      <% end %>
+    <% end %>
+  </ul>
 </div>

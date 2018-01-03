@@ -1,8 +1,16 @@
-<h2>End <%= @event.goal.habit.name %> Session</h2>
-<p><%= @event.start_time %></p>
-<p><%= @event.date %></p>
 
-<%= form_for @event do |f| %>
-  <%= f.time_field :end_time, value: Time.now, type: :hidden %>
-  <%= f.submit "End #{@event.goal.habit.name}" %>
-<% end %>
+<div class="">
+  <h1><%= @event.goal.habit.name %></h1>
+  <h2><%= @event.goal.user.name %></h2>
+  <ul>
+    <li>Total Hours:</li>
+    <li>Total Sessions:</li>
+    <li>Longest Streak:</li>
+  </ul>
+
+  <%= form_for @event do |f| %>
+    <%= f.time_field :end_time, value: Time.now, type: :hidden %>
+    <%= f.submit "End #{@event.goal.habit.name}" %>
+  <% end %>
+
+</div>

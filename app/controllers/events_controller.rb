@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     # @event = Event.new(goal_id: @goal.id start_time: Time.now, end_time: nil, date: Date.today)
     @event = Event.new(event_params)
     if @event.save
-      redirect_to edit_event_path(@event)
+      redirect_to goal_path(@event.goal)
     else
       redirect_to new_goal_path
     end
@@ -25,7 +25,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_params)
-      redirect_to goal_path(@event.goal_id)
+      redirect_to goal_path(@event.goal)
     else
       render :edit
     end

@@ -13,7 +13,7 @@ class HabitsController < ApplicationController
     def create
       @habit = Habit.new(habit_params)
       if @habit.save
-        @goal = Goal.create(user_id: current_user.id, habit_id: @habit.id)
+        # @goal = Goal.create(user_id: current_user.id, habit_id: @habit.id)
         redirect_to user_path(current_user)
       else
         render :new
