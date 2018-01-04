@@ -19,8 +19,15 @@ class Goal < ApplicationRecord
 
   # get highest streak (concurrent days) from events
   def longest_streak
-    self.events.date.map do |d|
-
+    sorted = self.events.sort_by &:date
+    result = []
+    sorted.each do |event|
+      if result.empty? || (event.date - result.last.last.date).to_i != 1
+        result << [event]
+      else
+        result.last << event
+      end
     end
+      result.sort_by {|el| el.length}.last.length
   end
 end
