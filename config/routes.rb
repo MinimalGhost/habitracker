@@ -8,9 +8,14 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get    '/signup',  to: 'users#new', as: 'signup'
 
-  resources :users
   resources :goals
   resources :events
   resources :habits, only: [:show, :new, :create]
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
 
 end

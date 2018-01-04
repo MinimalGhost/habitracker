@@ -2,7 +2,7 @@
   <h1><%= @goal.habit.name %></h1>
   <h2><%= @goal.user.name %></h2>
   <ul>
-    <li>Total Time: <%= @goal.total_time %></li>
+    <li>Total Time: <%= "#{@goal.total_time / 60}:#{@goal.total_time % 60}" %></li>
     <li>Total Sessions: <%= @goal.total_events %></li>
     <li>Longest Streak: <%= @goal.longest_streak %></li>
   </ul>

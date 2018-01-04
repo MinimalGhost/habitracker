@@ -9,7 +9,7 @@ class Goal < ApplicationRecord
     self.events.each do |event|
       total_minutes += event.minutes
     end
-    "#{total_minutes / 60}:#{total_minutes % 60}"
+    total_minutes
   end
 
   def total_hours
