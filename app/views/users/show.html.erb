@@ -23,8 +23,8 @@
         <td><%= goal.habit.name %></td>
         <td><%= goal.total_hours %>/<%= goal.target_hours %></td>
         <td><%= goal.total_events %>/<%= goal.target_times %></td>
-        <td>0/0</td>
-        <td><%=  %></td>
+        <td><%= goal.longest_streak%> / <%= goal.target_streak %></td>
+        <td><%= goal.completed? %></td>
         <td><%= link_to "Show", goal_path(goal) %></td>
       </tr>
     <% end %>

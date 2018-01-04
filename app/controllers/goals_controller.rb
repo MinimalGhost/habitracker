@@ -17,22 +17,26 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
-    
+
     @event = Event.new
   end
 
   def edit
     @goal = Goal.find(params[:id])
+    @habits = Habit.all
+
   end
 
   def update
     @goal = Goal.find(params[:id])
     @goal.update(goal_params)
+    redirect_to @goal
   end
 
   def destroy
     @goal = Goal.find(params[:id])
     @goal.destroy
+    redirect_to user_path(current_user)
   end
 
   private

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180104150027) do
     t.integer "target_hours"
     t.integer "target_times"
     t.integer "target_streak"
+    t.boolean "complete", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

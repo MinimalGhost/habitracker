@@ -7,11 +7,16 @@
     <li>Longest Streak: <%= @goal.longest_streak %></li>
   </ul>
 
-  <%= form_for @event do |f| %>
-    <%= f.number_field :goal_id, value: @goal.id, type: :hidden %>
-    <%= f.time_field :start_time, value: Time.now, type: :hidden %>
-    <%= f.date_field :date, value: Date.today, type: :hidden %>
-    <%= f.submit "Start #{@goal.habit.name}" %>
+  <% if @goal.user == current_user %>
+    <%= link_to "Edit Goal", edit_goal_path(@goal), class: "btn btn-primary" %>
+    <%= link_to "Delete Goal", goal_path(@goal), method: :delete, class: "btn btn-primary"%>
+
+    <%= form_for @event do |f| %>
+      <%= f.number_field :goal_id, value: @goal.id, type: :hidden %>
+      <%= f.time_field :start_time, value: Time.now, type: :hidden %>
+      <%= f.date_field :date, value: Date.today, type: :hidden %>
+      <%= f.submit "Start #{@goal.habit.name}", class: "btn btn-primary" %>
+    <% end %>
   <% end %>
 
   <ul>

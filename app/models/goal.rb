@@ -36,6 +36,19 @@ class Goal < ApplicationRecord
         result.last << event
       end
     end
+      if result == []
+        return 0
+      else
       result.sort_by {|el| el.length}.last.length
+      end
+  end
+
+  def completed?
+
+    if self.longest_streak >= self.target_streak && self.total_hours.to_i >= self.target_hours && self.total_events >= self.target_times
+      self.complete = true
+    else
+      self.complete = false
+    end
   end
 end
