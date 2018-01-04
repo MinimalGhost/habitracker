@@ -4,7 +4,7 @@
   <ul>
     <li>Total Time: <%= @goal.total_time %></li>
     <li>Total Sessions: <%= @goal.total_events %></li>
-    <li>Longest Streak:</li>
+    <li>Longest Streak: <%= @goal.longest_streak %></li>
   </ul>
 
   <%= form_for @event do |f| %>
