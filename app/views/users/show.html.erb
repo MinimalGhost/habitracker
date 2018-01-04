@@ -25,7 +25,7 @@
         <td><%= goal.total_events %>/<%= goal.target_times %></td>
         <td><%= goal.longest_streak%> / <%= goal.target_streak %></td>
         <td><%= goal.completed? %></td>
-        <td><%= link_to "Show", goal_path(goal) %></td>
+        <td><%= link_to "Show", goal_path(goal), class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -44,7 +44,6 @@ class Goal < ApplicationRecord
   end
 
   def completed?
-
     if self.longest_streak >= self.target_streak && self.total_hours.to_i >= self.target_hours && self.total_events >= self.target_times
       self.complete = true
     else

@@ -51,7 +51,11 @@ class User < ApplicationRecord
   def total_sessions_logged
     all_sessions = 0
     self.goals.each do |goal|
-      
+
     end
+  end
+
+  def total_goals_reached
+    self.goals.count { |g| g.complete? }
   end
 end
