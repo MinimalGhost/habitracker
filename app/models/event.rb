@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :goal
+  validates_presence_of :goal_id, :start_time, :date
 
   # calculates how much time elapsed based on start/end time
   def minutes
