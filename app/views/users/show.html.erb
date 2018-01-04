@@ -8,7 +8,8 @@
       <th scope="col">Habits</th>
       <th scope="col">Hours</th>
       <th scope="col">Sessions</th>
-      <th scope="col">Longest Streak</th>
+      <th scope="col">Streak</th>
+      <th scope="col">Completed</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,7 @@
         <td><%= goal.total_hours %>/<%= goal.target_hours %></td>
         <td><%= goal.total_events %>/<%= goal.target_times %></td>
         <td>0/0</td>
+        <td><%=  %></td>
         <td><%= link_to "Show", goal_path(goal) %></td>
       </tr>
     <% end %>

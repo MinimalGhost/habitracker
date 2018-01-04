@@ -12,9 +12,26 @@ require 'faker'
   User.create(name: Faker::Name.first_name, password: "password")
 end
 
-20.times do
-  Habit.create(name: Faker::RickAndMorty.location)
-end
+Habit.create(name: "Jogging")
+Habit.create(name: "Guitar Practice")
+Habit.create(name: "Ruby")
+Habit.create(name: "Painting")
+Habit.create(name: "Muay Thai")
+Habit.create(name: "Unity 3D")
+Habit.create(name: "Cooking")
+Habit.create(name: "Drumming")
+Habit.create(name: "Social Work")
+Habit.create(name: "Gaming")
+Habit.create(name: "Javascript")
+Habit.create(name: "Rock Climbing")
+Habit.create(name: "React")
+Habit.create(name: "Snowboarding")
+Habit.create(name: "Cycling")
+Habit.create(name: "Gym")
+Habit.create(name: "Drawing")
+Habit.create(name: "Dancing")
+Habit.create(name: "Political Activism")
+Habit.create(name: "Rails")
 
 20.times do
   Goal.create(user_id: Faker::Number.between(1, 20), habit_id: Faker::Number.between(1, 20), target_hours: Faker::Number.between(1, 15), target_times: Faker::Number.between(1, 5), target_streak: Faker::Number.between(1, 3))
