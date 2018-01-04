@@ -13,7 +13,6 @@
     <%= f.date_field :date, value: Date.today, type: :hidden %>
     <%= f.submit "Start #{@goal.habit.name}" %>
   <% end %>
-  <!-- <%= button_to "Start #{@goal.habit.name}", events_path %> -->
 
   <ul>
     <% @goal.events.each do |event| %>

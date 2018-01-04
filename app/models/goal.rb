@@ -12,6 +12,14 @@ class Goal < ApplicationRecord
     "#{total_minutes / 60}:#{total_minutes % 60}"
   end
 
+  def total_hours
+    total_minutes = 0;
+    self.events.each do |event|
+      total_minutes += event.minutes
+    end
+    "#{total_minutes / 60}"
+  end
+
   # get total event instances
   def total_events
     self.events.count
