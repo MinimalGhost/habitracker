@@ -36,6 +36,7 @@ class Event < ApplicationRecord
     phrase = []
     min = 0
     hour = 0
+    day = 0
     seconds = Time.now - self.end_time
 
     while seconds > 60
