@@ -45,7 +45,7 @@ class User < ApplicationRecord
     self.goals.each do |goal|
       all_time += goal.total_time
     end
-    "#{all_time / 60} Hours, #{all_time % 60} Minutes"
+    "#{all_time / 60} hrs, #{all_time % 60} mins"
   end
 
   def total_sessions_logged

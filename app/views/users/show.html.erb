@@ -6,13 +6,26 @@
     </div> -->
 
   <div class="row mt-5">
-    <div class="stats col">
+    <div class="stats col-12">
       <h3><%= @user.name %></h3>
+<<<<<<< HEAD
       <p><%= link_to "New Goal", new_goal_path %> | <%= link_to "New Habit", new_habit_path %> | <%= link_to "All Users", users_path %> | <%= render 'follow_form' if logged_in? %></p>
       <%= render 'stats' %>
     </div>
 
+=======
+      <ul class="d-inline-flex list-unstyled">
+        <li class="pr-5"><%= render 'stats' %></li>
+        <li class="pr-5"><%= link_to "New Goal", new_goal_path, class: "btn btn-primary btn-sm" %></li>
+        <li class="pr-5"><%= link_to "New Habit", new_habit_path, class: "btn btn-primary btn-sm" %></li>
+        <li class="pr-5"><%= link_to "Follow Users", users_path, class: "btn btn-primary btn-sm" %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row mt-3">
+>>>>>>> ca16189da44dfe5ecc6a4495b7be20fd30f0ebcb
     <div class="col">
+
       <table class="table table-dark">
         <thead>
           <tr>
@@ -37,9 +50,18 @@
         </tbody>
       </table>
     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca16189da44dfe5ecc6a4495b7be20fd30f0ebcb
     <div class="feed col">
       <h3>Feed</h3>
       <%= render 'feed' %>
     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca16189da44dfe5ecc6a4495b7be20fd30f0ebcb
   </div>
+
 </div>
