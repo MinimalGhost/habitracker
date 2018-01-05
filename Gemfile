@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap', '~> 4.0.0.beta3'
 
+gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
