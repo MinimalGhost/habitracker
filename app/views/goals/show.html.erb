@@ -1,10 +1,10 @@
-<div class="">
+<div class="goal-show col-6">
   <h1><%= @goal.habit.name %></h1>
   <h2><%= @goal.user.name %></h2>
-  <ul>
-    <li>Total Time: <%= "#{@goal.total_time / 60}:#{@goal.total_time % 60}" %></li>
-    <li>Total Sessions: <%= @goal.total_events %></li>
-    <li>Longest Streak: <%= @goal.longest_streak %></li>
+  <ul class="list-inline">
+    <li id="f-descript">Total Time: <%= "#{@goal.total_time / 60}:#{@goal.total_time % 60}" %></li>
+    <li id="f-descript">Total Sessions: <%= @goal.total_events %></li>
+    <li id="f-descript">Longest Streak: <%= @goal.longest_streak %></li>
   </ul>
 
   <% if @goal.user == current_user %>
@@ -19,18 +19,20 @@
     <% end %>
 
   <% end %>
-
-  <ul>
-    <% @goal.events.each do |event| %>
-      <p>__________________________</p>
-      <li>Date: <%= event.date_formatter %></li>
-      <li>Start Time: <%= event.start_time.strftime("%R") %></li>
-      <% if event.end_time == nil %>
-        <li><%= link_to "End", edit_event_path(event) %></li>
-      <% else %>
-        <li>End Time: <%= event.end_time.strftime("%R") %></li>
-        <li>Elapsed Time: <%= event.elapsed_time %></li>
+  </div>
+  <div class="feed col-6">
+    <ul class="list-inline">
+      <% @goal.events.each do |event| %>
+        <div class="feed-box">
+          <li id="f-descript">Date: <%= event.date_formatter %></li>
+          <li id="f-descript">Start Time: <%= event.start_time.strftime("%R") %></li>
+          <% if event.end_time == nil %>
+            <li id="f-descript"><%= link_to "End", edit_event_path(event) %></li>
+          <% else %>
+            <li id="f-descript">End Time: <%= event.end_time.strftime("%R") %></li>
+            <li id="f-descript">Elapsed Time: <%= event.elapsed_time %></li>
+          <% end %>
+        </div>
       <% end %>
-    <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>

@@ -36,10 +36,11 @@
 
  #f-user a {
   text-decoration: none;
-  background-color: #8596af;
-  color: #5c8cce;
+  background-color: #c5d0db;
+  color: #212529;
   font-weight: bold;
-  padding: 4px;
+  font-size: 0.8em;
+  padding: 2px 4px;
   border-radius: 5px;
   margin-bottom: 5px;
  }
@@ -49,11 +50,33 @@
  }
 
  #f-descript {
-  color: #fff;
-  margin: 10px 4px 10px 4px;
+  color: #b3c3db;
+  margin: 10px auto 10px auto;
  }
 
  #f-complete-since {
   color: #8596af;
   font-size: 0.5em;
+ }
+
+ .rounders {
+   border-radius: 5px;
+   margin: auto;
+   padding: 10px;
+ }
+
+ .goal-show {
+   display: inline-block;
+   background-color: #212529;
+   border-radius: 5px;
+   margin: auto;
+   padding: 10px;
+ }
+
+ .goal-show h1 {
+  color: #fefefe;
+ }
+
+ .goal-show h2 {
+  color: #fefefe;
  }
