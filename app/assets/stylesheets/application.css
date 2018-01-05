@@ -14,6 +14,22 @@
  *= require_self
  */
 
+   body {
+     background-color: #58728c !important;
+   }
+
+   .followers a {
+     color : #B3C0CD;
+   }
+
+   .followers a:hover {
+     color: #7E92A5;
+   }
+
+   .navbar {
+    background-color: #212529;
+   }
+
   .feed {
     background-color: #212529;
     border-radius: 5px;
@@ -56,4 +72,8 @@
  #f-complete-since {
   color: #8596af;
   font-size: 0.5em;
+ }
+
+ .stats {
+   color: white;
  }
