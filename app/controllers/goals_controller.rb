@@ -17,8 +17,8 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
-
     @event = Event.new
+    @events = @goal.events
   end
 
   def edit

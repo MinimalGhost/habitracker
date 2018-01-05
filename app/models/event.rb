@@ -5,17 +5,22 @@ class Event < ApplicationRecord
   # calculates how much time elapsed based on start/end time
   def minutes
     min = 0
-
-    seconds = self.end_time - self.start_time
-    while seconds > 60
-      min += 1
-      seconds -= 60
+    if self.end_time != nil
+      seconds = self.end_time - self.start_time
+      while seconds > 60
+        min += 1
+        seconds -= 60
+      end
     end
     min
   end
 
   def elapsed_time
-    "#{self.minutes / 60}:#{self.minutes % 60}"
+    if self.end_time == nil
+      return "In progress"
+    else
+      "#{self.minutes / 60}:#{self.minutes % 60}"
+    end
   end
 
   # return the date in the correct format
