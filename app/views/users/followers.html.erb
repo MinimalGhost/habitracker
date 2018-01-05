@@ -1,5 +1,9 @@
+<div class="follow">
 <h1>Followers</h1>
 
-<ul> <% @followers.each do |user| %>
-  <li><%= link_to user.name, user_path(user) %></li>
-</ul><% end %>
+<ul class="inline-list">
+  <% @followers.each do |user| %>
+    <li><%= link_to user.name, user_path(user) %></li>
+  <% end %>
+</ul>
+</div>

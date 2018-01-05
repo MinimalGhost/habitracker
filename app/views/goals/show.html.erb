@@ -1,4 +1,6 @@
-<div class="goal-show col-6">
+<div class="container">
+<div class="row mt-5">
+<div class="goal-show col-4">
   <h1><%= @goal.habit.name %></h1>
   <h2><%= @goal.user.name %></h2>
   <ul class="list-inline">
@@ -20,14 +22,14 @@
 
   <% end %>
   </div>
-  <div class="feed col-6">
+  <div class="feed col-7">
     <ul class="list-inline">
       <% @goal.events.each do |event| %>
         <div class="feed-box">
           <li id="f-descript">Date: <%= event.date_formatter %></li>
           <li id="f-descript">Start Time: <%= event.start_time.strftime("%R") %></li>
           <% if event.end_time == nil %>
-            <li id="f-descript"><%= link_to "End", edit_event_path(event) %></li>
+            <li id="f-descript"><%= link_to "End", edit_event_path(event), class: "btn btn-primary" %></li>
           <% else %>
             <li id="f-descript">End Time: <%= event.end_time.strftime("%R") %></li>
             <li id="f-descript">Elapsed Time: <%= event.elapsed_time %></li>
@@ -36,3 +38,5 @@
       <% end %>
     </ul>
   </div>
+</div>
+</div>

@@ -18,13 +18,26 @@
      background-color: #58728c !important;
    }
 
-   .followers a {
-     color : #B3C0CD;
+   a {
+     color : #B3C0CD !important;
+     text-decoration: none;
    }
 
-   .followers a:hover {
-     color: #7E92A5;
-   }
+  a:hover {
+    color: #7e92a5 !important;
+    text-decoration: none;
+  }
+
+  .follow {
+    background-color: #212529;
+    border-radius: 5px;
+    margin: 50px;
+    padding: 10px;
+  }
+
+  .follow h1 {
+    color: #fefefe;
+  }
 
    .navbar {
     background-color: #212529;
@@ -52,13 +65,13 @@
 
  #f-user a {
   text-decoration: none;
-  background-color: #c5d0db;
+  /*background-color: #c5d0db;*/
   color: #212529;
   font-weight: bold;
-  font-size: 0.8em;
-  padding: 2px 4px;
-  border-radius: 5px;
-  margin-bottom: 5px;
+  font-size: 1.2em;
+  /*padding: 2px 4px;*/
+  /*border-radius: 5px;*/
+  margin-bottom: 2px;
  }
 
  #f-user a:hover {
@@ -68,6 +81,7 @@
  #f-descript {
   color: #b3c3db;
   margin: 10px auto 10px auto;
+  display: inline-block;
  }
 
  #f-complete-since {
@@ -109,8 +123,7 @@
    display: inline-block;
    background-color: #212529;
    border-radius: 5px;
-   margin: auto;
-   padding: 10px;
+   height: 500px;
  }
 
  .goal-show h1 {
@@ -119,4 +132,19 @@
 
  .goal-show h2 {
   color: #fefefe;
+ }
+
+ .new-form {
+   background-color: #212529;
+   border-radius: 5px;
+   margin: 10% 30%;
+   padding: 20px 0px 20px 20px;
+ }
+
+ .new-form h1 {
+   color: #fff;
+ }
+
+ .new-form label {
+   color: #fff;
  }
