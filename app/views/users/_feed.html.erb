@@ -1,13 +1,13 @@
 <% if current_user == @user %>
-<div class="feed-panel">
-  <ul id="feed-box">
+  <ul class="list-inline">
     <% @user.following.each do |follow| %>
       <% follow.events.each do |event| %>
-        <li><%= link_to follow.name, user_path(follow) %></li>
-        <li>Completed <%= "#{event.minutes / 60}" %> hours, <%= "#{event.minutes % 60}" %> minutes of <%= event.goal.habit.name %>.</li>
-        <li><%= event.time_since_completion %> ago</li>
+      <div class="feed-box">
+        <li id="f-user"><%= link_to follow.name, user_path(follow) %></li>
+        <li id="f-descript">Completed <%= "#{event.minutes / 60}" %> hours, <%= "#{event.minutes % 60}" %> minutes of <%= event.goal.habit.name %>.</li>
+        <li id="f-complete-since"><%= event.time_since_completion %> ago</li>
+      </div>
       <% end %>
     <% end %>
   </ul>
-</div>
 <% end %>
